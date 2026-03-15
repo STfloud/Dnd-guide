@@ -1,0 +1,144 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0c1f;
+    color: #E0D4B5;
+    line-height: 1.6;
+}
+
+/* Шапка и меню */
+header {
+    position: fixed; top: 0; left: 0; width: 100%;
+    padding: 16px 30px;
+    background: rgba(20, 15, 35, 0.95);
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 1000;
+}
+
+.hamburger { width: 40px; height: 32px; background: none; border: none; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
+.hamburger span { height: 4px; background: #D4A017; transition: 0.4s; }
+
+.menu {
+    position: fixed; top: 0; left: -320px; width: 300px; height: 100vh;
+    background: rgba(30, 20, 45, 0.98); padding: 90px 30px; transition: left 0.45s; z-index: 1050;
+}
+.menu.open { left: 0; }
+.menu a { color: #E0D4B5; text-decoration: none; font-size: 1.35rem; display: block; padding: 18px 0; }
+.menu a:hover { color: #D4A017; }
+
+body.menu-open main, body.menu-open footer { filter: blur(8px); pointer-events: none; }
+
+/* Секции */
+.section {
+    padding: 140px 20px 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+h1, h2 { color: #D4A017; text-shadow: 0 0 14px rgba(212,160,23,0.6); }
+
+.btn {
+    background: #8B0000; color: #F5E6D3;
+    padding: 16px 48px; border-radius: 50px;
+    text-decoration: none; font-weight: bold; font-size: 1.25rem;
+    transition: all 0.3s;
+}
+.btn:hover { background: #A11212; transform: translateY(-4px); }
+
+/* КАРТОЧКИ*/
+.cards {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 40px;
+}
+.card {
+    background: rgba(60, 47, 47, 0.85);
+    padding: 28px 20px;
+    border-radius: 16px;
+    width: 280px;
+    border: 2px solid #3C2F2F;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.card:hover {
+    transform: scale(1.08);
+    border-color: #D4A017;
+    box-shadow: 0 0 25px rgba(212, 160, 23, 0.7);
+}
+
+/* Бросок кубика */
+.dice-result {
+    font-size: 7rem;
+    margin-top: 40px;
+    min-height: 140px;
+    font-weight: bold;
+    transition: all 0.4s;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* вертикально по центру */
+    align-items: center;           /* горизонтально по центру */
+    text-align: center;            /* текст внутри тоже центрируется */
+    padding: 0 20px;               /* небольшие боковые отступы на узких экранах */
+}
+
+.hero-content {
+    max-width: 800px;              /* ограничиваем ширину, чтобы не растягивалось */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;           /* всё внутри блока — строго по центру */
+    gap: 1.8rem;                   /* расстояние между заголовком, текстом и кнопкой */
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin: 0;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin: 0;
+    max-width: 600px;
+    text-align: center;
+}
+
+.btn {
+    padding: 1.2rem 3.5rem;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;            /* небольшой отступ сверху от кнопки */
+}
+
+.hero-image,
+.section-image,
+.dice-image {
+    width: 100%;
+    max-width: 1000px;           /* не растягивать слишком сильно на большом экране */
+    height: auto;
+    border-radius: 12px;
+    margin: 30px auto;
+    display: block;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border: 2px solid #3C2F2F;
+}
+
+.full-width {
+    max-width: 1200px;
+}
+
+.dice-image {
+    max-width: 400px;
+    margin: 0 auto 40px;
+}
+
+@media (max-width: 768px) {
+    .hero-image, .section-image, .dice-image {
+        margin: 20px auto;
+    }
+}

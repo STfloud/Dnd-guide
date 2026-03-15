@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Гид для Новичков - Дурбажев Владислав</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <button id="hamburger" class="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+        <h1>Подземелья и Драконы</h1>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="#hero">Начало</a></li>
+                <li><a href="#what">Что такое D&D?</a></li>
+                <li><a href="#classes">Классы</a></li>
+                <li><a href="#races">Расы</a></li>
+                <li><a href="#mechanics">Ключевые механики</a></li>
+                <li><a href="#quiz">Кем ты будешь?</a></li>
+                <li><a href="#dice">Бросок d20</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="section hero">
+            <!-- Таверна в самом начале -->
+            <img src="images/taverna.jpg" alt="Фэнтезийная таверна" class="hero-image">
+
+            <div class="hero-content">
+                <h2>Стань героем уже сегодня!</h2>
+                <p>Интерактивный гид для начинающих в Dungeons & Dragons</p>
+                <a href="#what" class="btn">Начать путь героя</a>
+            </div>
+        </section>
+
+        <section id="what" class="section">
+            <!-- Вторая таверна в блоке "Что такое D&D?" -->
+            <img src="images/tavern-interior.jpg" alt="Таверна внутри" class="section-image">
+
+            <h2>Что такое D&D?</h2>
+            <p>Dungeons & Dragons - настольная ролевая игра, где вы с друзьями создаёте совместную историю в мире фэнтези. Один игрок - Мастер Подземелий, остальные - герои. Всё решает бросок кубика d20.</p>
+        </section>
+
+        <!-- КЛАССЫ -->
+        <section id="classes" class="section">
+            <!-- Большая картинка с 15 классами — сверху раздела -->
+            <img src="images/warriors-grid.png" alt="Классы D&D в стиле After School Warriors" class="section-image full-width">
+
+            <h2>Классы</h2>
+            <div class="cards" id="class-cards">
+                <div class="card"><h3>Воин</h3><p>Сильный боец с мечом и щитом. Защищает союзников и наносит мощные удары.</p></div>
+                <div class="card"><h3>Волшебник</h3><p>Мастер тайной магии. Бросает огненные шары и другие заклинания.</p></div>
+                <div class="card"><h3>Плут</h3><p>Ловкий вор и мастер скрытности. Наносит удары в спину.</p></div>
+                <div class="card"><h3>Варвар</h3><p>Неукротимая ярость и огромная сила. Ходит без доспехов.</p></div>
+                <div class="card"><h3>Жрец</h3><p>Служитель богов. Лечит союзников и карает врагов.</p></div>
+                <div class="card"><h3>Монах</h3><p>Мастер боевых искусств. Бьёт руками и использует ци-энергию.</p></div>
+            </div>
+
+            <!-- Дракон можно поставить здесь, в конце раздела классов -->
+            <img src="images/dragon.jpg" alt="Дракон и герои" class="section-image">
+        </section>
+
+        <!-- РАСЫ -->
+<section id="races" class="section">
+    <!-- Картинка с расами — вставлена сюда, в начало блока -->
+    <img src="images/races-grid.jpg" 
+         alt="Все расы D&D" 
+         class="section-image full-width">
+
+    <h2>Расы</h2>
+    <div class="cards" id="race-cards">
+        <div class="card"><h3>Человек</h3><p>Универсальный и адаптивный. Может быть кем угодно.</p></div>
+        <div class="card"><h3>Эльф</h3><p>Грациозный долгожитель. Отличный лучник и маг.</p></div>
+        <div class="card"><h3>Дварф</h3><p>Крепкий и стойкий. Любит золото и топоры.</p></div>
+        <div class="card"><h3>Полурослик</h3><p>Маленький, но очень смелый и удачливый.</p></div>
+        <div class="card"><h3>Гном</h3><p>Изобретательный и любопытный. Любит технику и магию.</p></div>
+        <div class="card"><h3>Тифлинг</h3><p>С демонической кровью. Харизматичный и загадочный.</p></div>
+    </div>
+</section>
+
+        <!-- КЛЮЧЕВЫЕ МЕХАНИКИ -->
+        <section id="mechanics" class="section">
+            <h2>Ключевые механики</h2>
+            <div class="cards mechanics-cards">
+                <div class="card"><h3>d20</h3><p>Основной кубик игры. Бросаешь + модификатор и сравниваешь с нужным числом.</p></div>
+                <div class="card"><h3>Проверки характеристик</h3><p>Сила, Ловкость, Телосложение, Интеллект, Мудрость, Харизма.</p></div>
+                <div class="card"><h3>Класс Доспеха (КД)</h3><p>Сколько нужно выбросить, чтобы попасть по тебе.</p></div>
+                <div class="card"><h3>Хиты (HP)</h3><p>Твоё здоровье. Когда заканчиваются — ты падаешь без сознания.</p></div>
+                <div class="card"><h3>Спасброски</h3><p>Бросок кубика для определения: Защиты от яда, заклинаний, огня и других опасностей.</p></div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section">
+            <h2>Кем ты будешь?</h2>
+            <p>Интерактивный тест на подбор персонажа (в разработке)</p>
+        </section>
+
+        <section id="dice" class="section">
+            <!-- Кубик d20 в блоке броска -->
+            <img src="images/d20-spark.jpg" alt="Магический кубик d20" class="dice-image">
+
+            <h2>Бросок d20</h2>
+            <button id="roll-btn" class="btn">Бросить d20</button>
+            <div id="result" class="dice-result">Нажми кнопку</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Индивидуальный проект • Дурбажев Владислав • ИСП-1,2-БО 2025</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
