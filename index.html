@@ -40,12 +40,50 @@
         </section>
 
         <section id="what" class="section">
-            <!-- Вторая таверна в блоке "Что такое D&D?" -->
-            <img src="images/tavern-interior.jpg" alt="Таверна внутри" class="section-image">
 
-            <h2>Что такое D&D?</h2>
-            <p>Dungeons & Dragons - настольная ролевая игра, где вы с друзьями создаёте совместную историю в мире фэнтези. Один игрок - Мастер Подземелий, остальные - герои. Всё решает бросок кубика d20.</p>
-        </section>
+  <section id="what" class="section">
+  <!-- Большая картинка таверны сверху -->
+  <img 
+    src="images/tavern-interior.jpg" 
+    alt="Тёплая фэнтезийная таверна, где собираются авантюристы" 
+    class="section-image full-width"
+    loading="lazy"
+  >
+
+  <div class="what-content">
+    <h2>Что такое Dungeons & Dragons?</h2>
+
+    <p class="lead">
+      D&D - это настольная ролевая игра, в которой несколько друзей вместе придумывают и проживают свою эпичную историю в мире мечей, магии и драконов.
+    </p>
+
+    <div class="what-grid">
+      <div class="what-item">
+        <strong>Один человек - Мастер Подземелий (DM)</strong>
+        <p>Он - режиссёр и рассказчик: описывает мир, играет за всех монстров, NPC, драконов и погоду.</p>
+      </div>
+
+      <div class="what-item">
+        <strong>Остальные - игроки</strong>
+        <p>Каждый создаёт своего героя (эльф-лучница, человеческий паладин, гном-волшебник, тифлинг-бард и т.д.) и решает, что этот герой делает.</p>
+      </div>
+
+      <div class="what-item">
+        <strong>Нет «проигрыша»</strong>
+        <p>Здесь нет поражения - есть только интересные истории, даже если всё идёт не по плану. Всё решает ваше воображение и кубики.</p>
+      </div>
+
+      <div class="what-item full">
+        <strong>Главный судья - кубик d20</strong>
+        <p>Почти всё важное решается броском d20 + модификаторы.</p>
+        <div class="example">
+          Бросил 18 → перепрыгнул пропасть.<br>
+          Бросил 3 → герой поскользнулся и повис над бездной.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
        <!-- КЛАССЫ -->
 <section id="classes" class="section">
@@ -186,10 +224,27 @@
   </section>
 
   <section id="dice" class="section">
-    <h2>Бросок d20</h2>
-    <button id="roll-btn" class="btn">Бросить d20</button>
-    <div id="result" class="dice-result">Нажми кнопку</div>
-  </section>
+  <h2>Бросок кубика</h2>
+  <p style="margin: 8px 0 20px; color: #A89A7C;">Выбери кубик и кинь!</p>
+
+  <div class="dice-controls">
+    <select id="dice-type" class="dice-select">
+      <option value="d20">d20</option>
+      <option value="d4">d4</option>
+      <option value="d6">d6</option>
+      <option value="d8">d8</option>
+      <option value="d10">d10</option>
+      <option value="d12">d12</option>
+      <option value="d100">d100</option>
+    </select>
+
+    <button id="roll-btn" class="btn">Кинуть!</button>
+  </div>
+
+  <div id="dice-result" class="dice-result">
+    <div id="dice-animation" class="dice-animation">?</div>
+  </div>
+</section>
 </main>
 
     <footer>
@@ -197,5 +252,14 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">×</span>
+    <h2 id="modal-title"></h2>
+    <div id="modal-body"></div>
+  </div>
+</div>
 </body>
 </html>
