@@ -372,7 +372,7 @@ h1, h2 {
   grid-column: 1 / -1;  /* растягивает на всю ширину */
   text-align: center;
   font-size: 1.25rem;
-  background: rgba(40, 30, 55, 0.75);  /* чуть темнее для акцента */
+  background: rgba(40, 30, 55, 0.75); 
   padding: 1.8rem 2rem;
 }
 
@@ -415,3 +415,145 @@ h1, h2 {
   color: #c9b38a;
   font-size: 1rem;
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100vh;
+    background: rgba(26, 20, 40, 0.98);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+    padding: 80px 20px 30px;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1100;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 16px 20px;
+    color: #E0D4B5;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: rgba(212, 160, 23, 0.15);
+    color: #D4A017;
+    padding-left: 28px;
+}
+
+.sidebar a:active {
+    background: rgba(212, 160, 23, 0.25);
+}
+
+/* Затемнение фона при открытом меню */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    z-index: 1090;
+}
+
+body.menu-open .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-open main,
+body.menu-open footer {
+    filter: blur(4px);
+    transition: filter 0.4s ease;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    color: #E0D4B5;
+    text-decoration: none;
+    font-size: 1.22rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: rgba(212, 160, 23, 0.2);
+    color: #D4A017;
+    padding-left: 32px;
+}
+
+/*  ШАПКА САЙТА  */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 15, 35, 0.96);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    border-bottom: 1px solid #3C2F2F;
+    padding: 12px 24px;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.logo-text {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #D4A017;
+    letter-spacing: 1px;
+}
+
+.logo-sub {
+    font-size: 0.9rem;
+    color: #C9B38A;
+}
+
+.hamburger {
+    width: 42px;
+    height: 34px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.hamburger span {
+    height: 5px;
+    background: #D4A017;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+[id] {
+    scroll-margin-top: 80px; 
+} 

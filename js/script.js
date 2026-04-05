@@ -1,20 +1,47 @@
-// Меню
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
-let isOpen = false;
+// БОКОВОЕ МЕНЮ
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
 
-hamburger.addEventListener('click', () => {
-  isOpen = !isOpen;
-  menu.classList.toggle('open');
-  document.body.classList.toggle('menu-open');
-});
+  
+    if (hamburger && sidebar) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.add('active');
+            document.body.classList.add('menu-open');
+        });
+    }
 
-document.querySelectorAll('.menu a').forEach(a => {
-  a.addEventListener('click', () => {
-    menu.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    isOpen = false;
-  });
+    function closeMenu() {
+        if (sidebar) sidebar.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+
+    document.addEventListener('click', (e) => {
+        if (sidebar && !sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+    }
+
+    const menuLinks = sidebar.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            setTimeout(() => {
+                closeMenu();
+            }, 300);
+        });
+    });
 });
 
 // Плавная прокрутка по якорям
@@ -31,7 +58,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', () => {
   const rollBtn = document.getElementById('roll-btn');
   const resultDisplay = document.getElementById('result');         // основной элемент результата
-  const diceTypeSelect = document.getElementById('dice-type');     // селект с типом кубика
+  const diceTypeSelect = document.getElementById('dice-type');     // выбор с типом кубика
   const diceAnim = document.getElementById('dice-animation');      // анимируемый кубик
   const resultValue = document.getElementById('result-value');     // текст результата
 
@@ -59,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
       resultDisplay.style.transform = `rotate(${angle}deg) scale(1.25)`;
     }, 80);
 
-    // Через 1.2 секунды показываем результат
+    // Через 1 секунду показываем результат
     setTimeout(() => {
       clearInterval(spinInterval);
 
@@ -167,7 +194,6 @@ const questions = [
 let currentQuestion = 0;
 let scores = {};
 
-// Запуск теста после полной загрузки страницы
 window.addEventListener('load', () => {
     console.log("Страница загружена, запускаем тест");
 

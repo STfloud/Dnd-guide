@@ -9,24 +9,35 @@
 </head>
 <body>
 
-    <header>
+<header>
+    <div class="header-container">
+        
         <button id="hamburger" class="hamburger">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
-        <h1>Подземелья и Драконы</h1>
-        <nav id="menu" class="menu">
-            <ul>
-                <li><a href="#hero">Начало</a></li>
-                <li><a href="#what">Что такое D&D?</a></li>
-                <li><a href="#classes">Классы</a></li>
-                <li><a href="#races">Расы</a></li>
-                <li><a href="#mechanics">Ключевые механики</a></li>
-                <li><a href="#quiz">Кем ты будешь?</a></li>
-                <li><a href="#dice">Бросок d20</a></li>
-            </ul>
-        </nav>
-    </header>
 
+        <div class="logo">
+            <span class="logo-text">Подземелья и Драконы</span>
+            <span class="logo-sub">Гид для новичков</span>
+        </div>
+
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <a href="#hero">Главная</a>
+        <a href="#what">Что такое D&D?</a>
+        <a href="#classes">Классы</a>
+        <a href="#races">Расы</a>
+        <a href="#mechanics">Ключевые механики</a>
+        <a href="#quiz">Тест «Кем ты будешь?»</a>
+        <a href="#dice">Бросок кубика</a>
+    </nav>
+
+    <div id="overlay" class="overlay"></div>
+</header>
+    
     <main>
         <section id="hero" class="section hero">
             <!-- Таверна в самом начале -->
@@ -35,7 +46,7 @@
             <div class="hero-content">
                 <h2>Стань героем уже сегодня!</h2>
                 <p>Интерактивный гид для начинающих в Dungeons & Dragons</p>
-                <a href="#what" class="btn">Начать путь героя</a>
+                <a href="#what-text" class="btn">Начать путь героя</a>
             </div>
         </section>
 
@@ -51,7 +62,7 @@
   >
 
   <div class="what-content">
-    <h2>Что такое Dungeons & Dragons?</h2>
+    <h2 id="what-text">Что такое Dungeons & Dragons?</h2> 
 
     <p class="lead">
       D&D - это настольная ролевая игра, в которой несколько друзей вместе придумывают и проживают свою эпичную историю в мире мечей, магии и драконов.
